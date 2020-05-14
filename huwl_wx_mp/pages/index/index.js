@@ -9,6 +9,9 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+  haha: function() {
+    console.log("haha...")
+  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
@@ -29,11 +32,13 @@ Page({
           userInfo: res.userInfo,
           hasUserInfo: true
         })
+        console.log(res);
       }
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
         success: res => {
+          console.log(res);
           app.globalData.userInfo = res.userInfo
           this.setData({
             userInfo: res.userInfo,
@@ -50,5 +55,14 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  handleTap1() {
+    console.log("handleTap1");
+  },
+  handleTap2() {
+    console.log("handleTap2");
+  },
+  handleTap3() {
+    console.log("handleTap3");
   }
 })

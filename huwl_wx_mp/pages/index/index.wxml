@@ -1,13 +1,38 @@
 <!--index.wxml-->
 <view class="container">
+  <wxs module="wxs" src="./index.wxs"></wxs>
   <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <button 
+      wx:if="{{!hasUserInfo && canIUse}}" 
+      open-type="getUserInfo" 
+      bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <image 
+        bindtap="bindViewTap" 
+        class="userinfo-avatar" 
+        src="{{userInfo.avatarUrl}}" 
+        mode="cover"></image>
+      <text 
+        class="userinfo-nickname"
+        bindtap="haha" >{{userInfo.nickName}}</text>
     </block>
   </view>
   <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+    <text class="user-motto" bindtap="haha">{{motto}}</text>
+  </view>
+  <view>
+    <block>
+      <button data-alpha-beta="1" data-alphaBeta="2" bindtap="{{wxs.tapName}}">haha...</button>
+      <map></map>
+    </block>
+  </view>
+  <view id="outer" mut-bind:tap="handleTap1">
+    outer view
+    <view id="middle" bindtap="handleTap2">
+      middle view
+      <view id="inner" mut-bind:tap="handleTap3">
+        inner view
+      </view>
+    </view>
   </view>
 </view>
