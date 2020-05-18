@@ -18,7 +18,6 @@ target/
 .history/
 
 # temp ignore
-*.log
 *.cache
 *.diff
 *.patch
@@ -38,7 +37,7 @@ Thumbs.db
 node_modules
 node_modules_old
 bin
-logs
+# logs
 typings
 _dist
 *.map

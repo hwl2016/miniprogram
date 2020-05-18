@@ -18,6 +18,11 @@ Page({
       url: '../logs/logs'
     })
   },
+  goHome: function() {
+    wx.navigateTo({
+      url: '../home/index'
+    })
+  },
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({

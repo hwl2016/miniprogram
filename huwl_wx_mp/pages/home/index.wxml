@@ -1,0 +1,19 @@
+<view>
+    <view>
+        <text>Home</text>
+    </view>
+    <view wx:for="{{arr}}" wx:key="index">{{item}}</view>
+    <view wx:if="{{view == 'WEBVIEW'}}"> WEBVIEW </view>
+    <view wx:elif="{{view == 'APP'}}"> APP </view>
+    <view wx:else="{{view == 'MINA'}}"> MINA </view>
+
+    <wxs module="m1">
+        var msg = "hello world";
+        module.exports.message = msg;
+    </wxs>
+    <view> {{m1.message}} </view>
+    <view mark:myMark="last" bindtap="bindViewTap">
+        name: <input id="haha" model:value="{{name}}"/>  <!-- 没有用  不能双向绑定了 -->
+        <button mark:anotherMark="leaf" bindtap="bindButtonTap">按钮</button>
+    </view>
+</view>

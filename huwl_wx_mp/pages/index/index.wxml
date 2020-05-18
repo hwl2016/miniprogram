@@ -19,6 +19,7 @@
   </view>
   <view class="usermotto">
     <text class="user-motto" bindtap="haha">{{motto}}</text>
+    <button bindtap="goHome">goto home</button>
   </view>
   <view>
     <block>
