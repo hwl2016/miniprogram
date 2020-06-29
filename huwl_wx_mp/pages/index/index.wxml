@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <wxs module="wxs" src="./index.wxs"></wxs>
+  <wxs module="m1" src="./index.wxs"></wxs>
   <view class="userinfo">
     <button 
       wx:if="{{!hasUserInfo && canIUse}}" 
@@ -23,7 +23,7 @@
   </view>
   <view>
     <block>
-      <button data-alpha-beta="1" data-alphaBeta="2" bindtap="{{wxs.tapName}}">haha...</button>
+      <button data-alpha-beta="1" data-alphaBeta="2" bindtap="{{m1.tapName}}">haha...</button>
       <map></map>
     </block>
   </view>

@@ -11,6 +11,9 @@
         var msg = "hello world";
         module.exports.message = msg;
     </wxs>
+    <user-info inner-text="parent" bindmyevent="onMyEvent">
+        <view>son</view>
+    </user-info>
     <view> {{m1.message}} </view>
     <view mark:myMark="last" bindtap="bindViewTap">
         name: <input id="haha" model:value="{{name}}"/>  <!-- 没有用  不能双向绑定了 -->

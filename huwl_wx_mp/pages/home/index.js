@@ -19,5 +19,8 @@ Page({
             console.log(res) // 显示区域的竖直滚动位置
         })
         query.exec()
+    },
+    onMyEvent(params) {
+        console.log("onMyEvent => ", params);
     }
 })
